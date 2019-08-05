@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'index.html'
+    return "<h1>Hello World, Jinbei is not working :(</h1>"
