@@ -38,7 +38,7 @@ finally:
         print("MySQL connection is closed")
 
 
-engine = sqlalchemy.create_engine('mysql+pymysl://'+os.environ.get(CLEARDB_DATABASE_URL)[8:88])
+engine = sqlalchemy.create_engine(os.environ.get(omega))
 
 with engine.connect() as con:
 
