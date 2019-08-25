@@ -6,6 +6,8 @@ import sqlalchemy
 import pymysql
 
 string = ''
+string2 = ''
+
 try:
     connection = mysql.connector.connect(host=os.environ.get('thehost'),
                              database=os.environ.get('thedatabase'),
@@ -35,10 +37,17 @@ finally:
         connection.close()
         print("MySQL connection is closed")
 
+
 engine = sqlalchemy.create_engine('mysql+pymysl://'+os.environ.get(CLEARDB_DATABASE_URL)[8:88])
+
+with engine.connect() as con:
+
+    rs = con.execute('SELECT * FROM groceries WHERE id = 2')
+
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return str(string)
+    return str(rs)
