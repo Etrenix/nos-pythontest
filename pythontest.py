@@ -52,4 +52,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return str(string2)
+    return string2
