@@ -37,7 +37,7 @@ finally:
         connection.close()
         print("MySQL connection is closed")
 
-
+"""
 engine = sqlalchemy.create_engine(os.environ.get('omega'))
 
 
@@ -45,7 +45,7 @@ rs = engine.connect().execute('SELECT * FROM groceries WHERE id = 2')
 for row in rs:
     string2 += str(row)
 
-
+"""
 
 app = Flask(__name__)
 
