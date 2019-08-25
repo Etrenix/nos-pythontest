@@ -2,6 +2,9 @@ from flask import Flask, render_template
 import mysql.connector
 from mysql.connector import Error
 import os
+import sqlalchemy
+import pymysql
+
 string = ''
 try:
     connection = mysql.connector.connect(host=os.environ.get('thehost'),
@@ -31,6 +34,9 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
+
+engine = sqlalchemy.create_engine('mysql+pymysl://'+os.environ.get(CLEARDB_DATABASE_URL)[8:88])
+
 app = Flask(__name__)
 
 @app.route('/')
