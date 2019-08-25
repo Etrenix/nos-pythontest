@@ -38,13 +38,12 @@ finally:
         print("MySQL connection is closed")
 
 
-engine = sqlalchemy.create_engine(os.environ.get(omega))
+engine = sqlalchemy.create_engine(os.environ.get('omega'))
 
-with engine.connect() as con:
 
-    rs = con.execute('SELECT * FROM groceries WHERE id = 2')
-    for row in rs:
-        string2 = str(row)
+rs = engine.connect().execute('SELECT * FROM groceries WHERE id = 2')
+for row in rs:
+    string2 = str(row)
 
 
 
