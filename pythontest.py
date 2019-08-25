@@ -51,4 +51,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return string2
+    return string
