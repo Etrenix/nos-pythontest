@@ -43,6 +43,8 @@ engine = sqlalchemy.create_engine('mysql+pymysl://'+os.environ.get(CLEARDB_DATAB
 with engine.connect() as con:
 
     rs = con.execute('SELECT * FROM groceries WHERE id = 2')
+    for row in rs:
+        string2 = str(row)
 
 
 
@@ -50,4 +52,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return str(rs)
+    return str(string2)
