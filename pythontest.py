@@ -22,7 +22,7 @@ try:
         print ("Your connected to - ", record)
         
         mycursor = connection.cursor()
-        mycursor.execute("SELECT * FROM groceries WHERE id = 1")
+        mycursor.execute("SELECT * FROM groceries")
         string = mycursor.fetchall()
         
 
