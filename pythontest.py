@@ -41,7 +41,7 @@ finally:
 engine = sqlalchemy.create_engine(os.environ.get('omega'))
 
 
-rs = engine.connect().execute('SELECT * FROM groceries WHERE id = 2')
+rs = engine.connect().execute('SELECT * FROM groceries')
 for row in rs:
     string2 += str(row)
 
